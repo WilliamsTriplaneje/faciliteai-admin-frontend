@@ -35,7 +35,7 @@ import {
   Table,
   Container,
   Row,
-  Col
+  Col,
 } from "reactstrap";
 
 // core components
@@ -43,17 +43,17 @@ import {
   chartOptions,
   parseOptions,
   chartExample1,
-  chartExample2
+  chartExample2,
 } from "../variables/charts.js";
 
 import Header from "../components/Headers/Header.js";
 
 class Index extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       activeNav: 1,
-      chartExample1Data: "data1"
+      chartExample1Data: "data1",
     };
     if (window.Chart) {
       parseOptions(Chart, chartOptions());
@@ -64,10 +64,10 @@ class Index extends React.Component {
     this.setState({
       activeNav: index,
       chartExample1Data:
-        this.state.chartExample1Data === "data1" ? "data2" : "data1"
+        this.state.chartExample1Data === "data1" ? "data2" : "data1",
     });
   };
-  
+
   render() {
     return (
       <>
@@ -81,34 +81,34 @@ class Index extends React.Component {
                   <Row className="align-items-center">
                     <div className="col">
                       <h6 className="text-uppercase text-light ls-1 mb-1">
-                        Overview
+                        Análise
                       </h6>
-                      <h2 className="text-white mb-0">Sales value</h2>
+                      <h2 className="text-white mb-0">Levantamento Mensal</h2>
                     </div>
                     <div className="col">
                       <Nav className="justify-content-end" pills>
                         <NavItem>
                           <NavLink
                             className={classnames("py-2 px-3", {
-                              active: this.state.activeNav === 1
+                              active: this.state.activeNav === 1,
                             })}
                             href="#pablo"
-                            onClick={e => this.toggleNavs(e, 1)}
+                            onClick={(e) => this.toggleNavs(e, 1)}
                           >
-                            <span className="d-none d-md-block">Month</span>
+                            <span className="d-none d-md-block">Mês</span>
                             <span className="d-md-none">M</span>
                           </NavLink>
                         </NavItem>
                         <NavItem>
                           <NavLink
                             className={classnames("py-2 px-3", {
-                              active: this.state.activeNav === 2
+                              active: this.state.activeNav === 2,
                             })}
                             data-toggle="tab"
                             href="#pablo"
-                            onClick={e => this.toggleNavs(e, 2)}
+                            onClick={(e) => this.toggleNavs(e, 2)}
                           >
-                            <span className="d-none d-md-block">Week</span>
+                            <span className="d-none d-md-block">Semana</span>
                             <span className="d-md-none">W</span>
                           </NavLink>
                         </NavItem>
@@ -122,7 +122,7 @@ class Index extends React.Component {
                     <Line
                       data={chartExample1[this.state.chartExample1Data]}
                       options={chartExample1.options}
-                      getDatasetAtEvent={e => console.log(e)}
+                      getDatasetAtEvent={(e) => console.log(e)}
                     />
                   </div>
                 </CardBody>
@@ -134,9 +134,9 @@ class Index extends React.Component {
                   <Row className="align-items-center">
                     <div className="col">
                       <h6 className="text-uppercase text-muted ls-1 mb-1">
-                        Performance
+                        USUÁRIOS
                       </h6>
-                      <h2 className="mb-0">Total orders</h2>
+                      <h2 className="mb-0">Mensal (%)</h2>
                     </div>
                   </Row>
                 </CardHeader>
@@ -164,7 +164,7 @@ class Index extends React.Component {
                       <Button
                         color="primary"
                         href="#pablo"
-                        onClick={e => e.preventDefault()}
+                        onClick={(e) => e.preventDefault()}
                         size="sm"
                       >
                         See all
@@ -242,7 +242,7 @@ class Index extends React.Component {
                       <Button
                         color="primary"
                         href="#pablo"
-                        onClick={e => e.preventDefault()}
+                        onClick={(e) => e.preventDefault()}
                         size="sm"
                       >
                         See all
